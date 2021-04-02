@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">OneCarIM</string>
+    <string name="im_chat_list_title">聊天列表</string>
+    <string name="im_chat_title">当前会话会话</string>
+</resources>

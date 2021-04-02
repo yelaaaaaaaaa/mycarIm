@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bt_cancel"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/shape_white_8"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/bt_choose_gaode"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:background="@color/common_transparent"
+            android:text="@string/dialog_choose_gaode"
+            android:textSize="20dp" />
+
+        <include layout="@layout/include_line_divider" />
+
+        <Button
+            android:id="@+id/bt_choose_baidu"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:background="@color/common_transparent"
+            android:text="@string/dialog_choose_baidu"
+            android:textSize="20dp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/bt_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/shape_white_8"
+        android:text="@string/dialog_cancel"
+        android:textSize="20dp" />
+
+
+</LinearLayout>

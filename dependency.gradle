@@ -1,0 +1,49 @@
+ext {
+    compileSdk = 28
+    minSdk = 17
+    targetSdk = compileSdk
+    versionCode = 1
+    versionName = "1.0.0"
+
+    versions = [
+            support           : "28.+",
+            okhttp3           : "3.11.0",
+            rxjava            : "2.1.2",
+            rxandroid         : "2.0.1",
+            rxpermissions     : "0.9.4@aar",
+            retrofit          : "2.3.0",
+            glide             : "4.8.0",
+            butterknife       : "8.8.1",
+            dagger            : "2.11",
+            arouter_api       : "1.4.0",
+            arouter_annotation: "1.2.1",
+    ]
+    libraries = [
+            //基础包
+            supportAnnotations : "com.android.support:support-annotations:${versions.support}",
+            supportAppCompat   : "com.android.support:appcompat-v7:${versions.support}",
+            supportRecyclerView: "com.android.support:recyclerview-v7:${versions.support}",
+            supportDesign      : "com.android.support:design:${versions.support}",
+            supportCardView    : "com.android.support:cardview-v7:${versions.support}",
+            //网络
+            okhttp3            : 'com.squareup.okhttp3:okhttp:' + versions.okhttp3,
+            okhttp3Log         : 'com.squareup.okhttp3:logging-interceptor:' + versions.okhttp3,
+            rxjava             : 'io.reactivex.rxjava2:rxjava:' + versions.rxjava,
+            rxandroid          : 'io.reactivex.rxjava2:rxandroid:' + versions.rxandroid,
+            rxpermissions      : 'com.tbruyelle.rxpermissions2:rxpermissions:' + versions.rxpermissions,
+            retrofit           : 'com.squareup.retrofit2:retrofit:' + versions.retrofit,
+            retrofitGson       : 'com.squareup.retrofit2:converter-gson:' + versions.retrofit,
+            retrofitAdapter    : 'com.squareup.retrofit2:adapter-rxjava2:' + versions.retrofit,
+            //图片
+            glide              : "com.github.bumptech.glide:glide:" + versions.glide,
+            //工具
+            butterknife        : 'com.jakewharton:butterknife:' + versions.butterknife,
+            butterknifeCompiler: 'com.jakewharton:butterknife-compiler:' + versions.butterknife,
+            dagger             : 'com.google.dagger:dagger:' + versions.dagger,
+            daggerCompiler     : 'com.google.dagger:dagger-compiler:' + versions.dagger,
+            arouter_api        : 'com.alibaba:arouter-api:' + versions.arouter_api,
+            arouter_annotation : 'com.alibaba:arouter-compiler:' + versions.arouter_annotation,
+
+    ]
+
+}

@@ -1,0 +1,42 @@
+======初始化==================
+    OIMClient.init(Context context, String appKey);
+            OIMClient.getInstance().connect(
+                    String token, String channelName(OWNER_110), final ConnectCallback callback
+            );
+======数据相对操作=======================
+    OIMClient.getInstance().getConversationListDataList()   获取聊天列表数据
+    OIMClient.getInstance().getChatRecondForTargetId(
+        String chatTargetUserId, long lastTime, final ChatDataCallback chatDataCallback)
+                                                            获取用户聊天数据列表
+    OIMClient.getInstance().sendMessage(
+        GeneralMessageDataInfo dataInfo)                    发送消息
+    OIMClient.getInstance().deleteConversationListByUserid(
+        String uid)                                         删除和某人的消息记录(列表和所有会话消息)
+    OIMClient.getInstance().deleteAMessage(
+        String userId, String messageid)                    删除一条记录
+    OIMClient.getInstance().getTotalNumberOfUnreadMessages                      获取未读消息总数 通知列表变化时调用
+=======eventbus 通知=============================
+    EventBus.getDefault().register(this);
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
+    }
+    @Subscribe
+    public void notifyConversationListChange(MessageEvent event) {
+    }
+    com.yryc.imlib.client.MessageEvent                        事件文件
+=======额外一些数据=======================================
+    OIMClient.getInstance().openSingleChat(uid)              进入和某人聊天界面调用 记录当前聊天对象uid以及这人的未读消息设0
+===============已读未读===============================================
+
+数据类型GeneralMessageDataInfo增加haveReadUnread boolean已读未读字段 true 已读 false未读
+        com.yryc.imlib.info.GeneralMessageDataInfo
+
+    我看了对方的消息
+    OIMClient.getInstance().sendHaveReadID(聊天对象uid, 已读id字符串);     已读id字符串集合用，隔开 id1,id2,id3
+    对方看了我的消息
+    if (messageEvent.eventType == MessageEvent.ME_NEW_READ_MESSAGE) {
+                HasReadDataInfo info = (HasReadDataInfo) messageEvent.values[0];
+     }
+        com.yryc.imlib.info.io.HasReadDataInfo
